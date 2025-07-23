@@ -1,0 +1,65 @@
+{
+  "users": {
+    "id": "primary key",
+    "email": "string unique",
+    "password": "string hashed",
+    "name": "string",
+    "avatar": "string optional",
+    "preferences": "json",
+    "created_at": "timestamp",
+    "updated_at": "timestamp"
+  },
+  "documents": {
+    "id": "primary key",
+    "user_id": "foreign key -> users.id",
+    "title": "string",
+    "content": "text",
+    "type": "string (markdown, text, etc)",
+    "folder_path": "string",
+    "tags": "json array",
+    "metadata": "json",
+    "created_at": "timestamp",
+    "updated_at": "timestamp"
+  },
+  "projects": {
+    "id": "primary key",
+    "user_id": "foreign key -> users.id",
+    "name": "string",
+    "description": "text",
+    "type": "string",
+    "status": "string",
+    "data": "json (tasks, timeline, etc)",
+    "created_at": "timestamp",
+    "updated_at": "timestamp"
+  },
+  "assets": {
+    "id": "primary key",
+    "user_id": "foreign key -> users.id",
+    "filename": "string",
+    "original_name": "string",
+    "mime_type": "string",
+    "size": "integer",
+    "url": "string",
+    "folder_path": "string",
+    "metadata": "json",
+    "created_at": "timestamp"
+  },
+  "ai_conversations": {
+    "id": "primary key",
+    "user_id": "foreign key -> users.id",
+    "document_id": "foreign key -> documents.id optional",
+    "messages": "json array",
+    "model_used": "string",
+    "tokens_used": "integer",
+    "created_at": "timestamp"
+  },
+  "collaboration_rooms": {
+    "id": "primary key",
+    "document_id": "foreign key -> documents.id",
+    "owner_id": "foreign key -> users.id",
+    "name": "string",
+    "members": "json array",
+    "settings": "json",
+    "created_at": "timestamp"
+  }
+}

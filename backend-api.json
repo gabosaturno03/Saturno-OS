@@ -1,0 +1,199 @@
+{
+  "api_version": "1.0.0",
+  "base_url": "http://localhost:3001/api",
+  "endpoints": {
+    "authentication": {
+      "POST /auth/login": {
+        "description": "User login with email/password",
+        "body": {
+          "email": "string",
+          "password": "string"
+        },
+        "response": {
+          "token": "string",
+          "user": "object"
+        }
+      },
+      "POST /auth/register": {
+        "description": "User registration",
+        "body": {
+          "email": "string",
+          "password": "string",
+          "name": "string"
+        },
+        "response": {
+          "token": "string",
+          "user": "object"
+        }
+      },
+      "POST /auth/refresh": {
+        "description": "Refresh JWT token",
+        "body": {
+          "refreshToken": "string"
+        },
+        "response": {
+          "token": "string"
+        }
+      }
+    },
+    "documents": {
+      "GET /documents": {
+        "description": "Get all user documents",
+        "query": {
+          "folder": "string",
+          "tags": "array",
+          "search": "string"
+        },
+        "response": {
+          "documents": "array",
+          "total": "number"
+        }
+      },
+      "POST /documents": {
+        "description": "Create new document",
+        "body": {
+          "title": "string",
+          "content": "string",
+          "type": "string",
+          "tags": "array"
+        },
+        "response": {
+          "document": "object"
+        }
+      },
+      "PUT /documents/:id": {
+        "description": "Update document",
+        "body": {
+          "title": "string",
+          "content": "string",
+          "tags": "array"
+        },
+        "response": {
+          "document": "object"
+        }
+      },
+      "DELETE /documents/:id": {
+        "description": "Delete document",
+        "response": {
+          "success": "boolean"
+        }
+      }
+    },
+    "ai": {
+      "POST /ai/chat": {
+        "description": "Send message to AI assistant",
+        "body": {
+          "message": "string",
+          "context": "array",
+          "model": "string"
+        },
+        "response": {
+          "response": "string",
+          "usage": "object"
+        }
+      },
+      "POST /ai/generate": {
+        "description": "Generate content using AI",
+        "body": {
+          "prompt": "string",
+          "type": "string",
+          "context": "array"
+        },
+        "response": {
+          "content": "string",
+          "usage": "object"
+        }
+      },
+      "GET /ai/models": {
+        "description": "Get available AI models",
+        "response": {
+          "models": "array"
+        }
+      }
+    },
+    "projects": {
+      "GET /projects": {
+        "description": "Get all user projects",
+        "response": {
+          "projects": "array"
+        }
+      },
+      "POST /projects": {
+        "description": "Create new project",
+        "body": {
+          "name": "string",
+          "description": "string",
+          "type": "string"
+        },
+        "response": {
+          "project": "object"
+        }
+      },
+      "PUT /projects/:id": {
+        "description": "Update project",
+        "body": {
+          "name": "string",
+          "description": "string",
+          "tasks": "array"
+        },
+        "response": {
+          "project": "object"
+        }
+      }
+    },
+    "assets": {
+      "GET /assets": {
+        "description": "Get all user assets",
+        "query": {
+          "type": "string",
+          "search": "string"
+        },
+        "response": {
+          "assets": "array"
+        }
+      },
+      "POST /assets/upload": {
+        "description": "Upload new asset",
+        "body": "multipart/form-data",
+        "response": {
+          "asset": "object",
+          "url": "string"
+        }
+      },
+      "DELETE /assets/:id": {
+        "description": "Delete asset",
+        "response": {
+          "success": "boolean"
+        }
+      }
+    },
+    "collaboration": {
+      "GET /collaboration/rooms": {
+        "description": "Get user's collaboration rooms",
+        "response": {
+          "rooms": "array"
+        }
+      },
+      "POST /collaboration/rooms": {
+        "description": "Create collaboration room",
+        "body": {
+          "name": "string",
+          "documentId": "string",
+          "members": "array"
+        },
+        "response": {
+          "room": "object"
+        }
+      },
+      "WebSocket /collaboration/rooms/:id": {
+        "description": "Real-time collaboration socket",
+        "events": [
+          "document-change",
+          "cursor-move",
+          "user-join",
+          "user-leave"
+        ]
+      }
+    }
+  }
+}

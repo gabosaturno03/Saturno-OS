@@ -1,0 +1,168 @@
+{
+  "phases": [
+    {
+      "name": "Foundation & Core",
+      "start_date": "2025-06-26",
+      "end_date": "2025-07-31",
+      "duration_weeks": 5,
+      "risk": "Medium",
+      "tasks": [
+        "Project setup and configuration",
+        "Basic React + TypeScript + Vite structure",
+        "Electron integration with Forge",
+        "Core layout and navigation",
+        "State management with Zustand",
+        "Basic styling system with Tailwind"
+      ],
+      "deliverables": [
+        "Working app skeleton",
+        "Development environment",
+        "CI/CD pipeline"
+      ]
+    },
+    {
+      "name": "Writing Interface",
+      "start_date": "2025-08-03",
+      "end_date": "2025-08-27",
+      "duration_weeks": 3.5,
+      "risk": "Medium",
+      "tasks": [
+        "Monaco Editor integration",
+        "Markdown support and preview",
+        "Slash commands for templates",
+        "Multi-pane editing",
+        "Document management system",
+        "Auto-save and version control"
+      ],
+      "deliverables": [
+        "Functional editor",
+        "Document system",
+        "Template library"
+      ]
+    },
+    {
+      "name": "Knowledge System",
+      "start_date": "2025-08-30",
+      "end_date": "2025-10-01",
+      "duration_weeks": 4.5,
+      "risk": "Medium-High",
+      "tasks": [
+        "File tree and folder structure",
+        "Drag-and-drop organization",
+        "Tagging system",
+        "Search functionality",
+        "Asset management",
+        "Import/export capabilities"
+      ],
+      "deliverables": [
+        "Knowledge vault",
+        "Asset library",
+        "Search system"
+      ]
+    },
+    {
+      "name": "AI Layer",
+      "start_date": "2025-10-04",
+      "end_date": "2025-11-11",
+      "duration_weeks": 5.5,
+      "risk": "High",
+      "tasks": [
+        "Multi-model AI integration",
+        "Chat interface and context management",
+        "Prompt library and templates",
+        "Content generation workflows",
+        "Knowledge base integration",
+        "Cost management and rate limiting"
+      ],
+      "deliverables": [
+        "AI assistant",
+        "Prompt system",
+        "Context engine"
+      ]
+    },
+    {
+      "name": "Advanced Features",
+      "start_date": "2025-11-14",
+      "end_date": "2025-12-09",
+      "duration_weeks": 3.5,
+      "risk": "Medium",
+      "tasks": [
+        "Focus timer with categories",
+        "Constellation knowledge map",
+        "Project management views",
+        "Real-time collaboration",
+        "Export and sharing",
+        "Advanced settings"
+      ],
+      "deliverables": [
+        "Focus system",
+        "Visualization tools",
+        "Collaboration features"
+      ]
+    },
+    {
+      "name": "Polish & Performance",
+      "start_date": "2025-12-12",
+      "end_date": "2025-12-29",
+      "duration_weeks": 2.5,
+      "risk": "Low",
+      "tasks": [
+        "Performance optimization",
+        "Accessibility improvements",
+        "Visual polish and animations",
+        "Mobile responsiveness",
+        "Bug fixes and testing",
+        "Documentation completion"
+      ],
+      "deliverables": [
+        "Optimized app",
+        "Complete documentation",
+        "Test suite"
+      ]
+    },
+    {
+      "name": "Packaging & Distribution",
+      "start_date": "2026-01-01",
+      "end_date": "2026-01-19",
+      "duration_weeks": 2.5,
+      "risk": "Medium",
+      "tasks": [
+        "Electron app packaging",
+        "Cross-platform builds",
+        "Auto-updater setup",
+        "Distribution preparation",
+        "Final testing",
+        "Release preparation"
+      ],
+      "deliverables": [
+        "Packaged apps",
+        "Distribution setup",
+        "Release candidates"
+      ]
+    }
+  ],
+  "milestones": [
+    {
+      "name": "MVP Demo",
+      "date": "2025-08-15",
+      "description": "Basic writing interface working"
+    },
+    {
+      "name": "Alpha Release",
+      "date": "2025-10-15",
+      "description": "Core features complete"
+    },
+    {
+      "name": "Beta Release",
+      "date": "2025-12-01",
+      "description": "All features implemented"
+    },
+    {
+      "name": "Production Release",
+      "date": "2026-01-20",
+      "description": "Stable, packaged application"
+    }
+  ],
+  "total_duration_weeks": 28,
+  "estimated_completion": "2026-01-19"
+}
